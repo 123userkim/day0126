@@ -31,7 +31,7 @@ public class BoardController {
 	@RequestMapping("/listBoard")
 	public void list(
 			HttpSession session,//정렬칼럼,검색칼럼,검색어를 상태유지하기 위하여 session변수를 매개변수로 정의합니다. 
-			Model model,//View페이지에서 필요한 데이터를 유지하기 위하여 Model을 선언합ㄴ디ㅏ.
+			Model model,//View페이지에서 필요한 데이터를 유지하기 위하여 Model을 선언합니다.
 			String searchColumn, // 검색칼럼을 받아오기 위한 변수
 			String keyword,   //검색어를 받아오기 위한 변수
 			String orderColumn,//정렬칼럼을 받아 오기 위한 변수
@@ -87,13 +87,13 @@ public class BoardController {
 		//dao에 계산된 전체페이지수를 model에 상태유지합니다.
 		model.addAttribute("totalPage", dao.totalPage);
 		
-		//만약에 정렬하였다면 정렬 칼럼이름을 세션에 저장하여 상태유지 합니다.
+		//만약에 정렬하였다면 정렬 칼럼이름을 세션에 저장하여 상태유지합니다.
 		if(orderColumn != null) {
 			session.setAttribute("orderColumn", orderColumn);
 		}
 		
 		//만약에 검색하였다면 
-		//검색한 칼럼이름과 검색어를 세션에 저장하여 상태유지 합니다
+		//검색한 칼럼이름과 검색어를 세션에 저장하여 상태유지합니다
 		if(keyword != null) {
 			session.setAttribute("searchColumn", searchColumn);
 			session.setAttribute("keyword", keyword);
